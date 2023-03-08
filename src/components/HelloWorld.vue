@@ -150,11 +150,25 @@ const engineOptions: enigne[] = [
 const courseOptions: course[] = [
   {
     name: 'desert',
-    length:'600',
-    terrainground: true 
-    terrainWater: false
-    terrainAir: false
-  }
+    length:600,
+    terrainground: true ,
+    terrainWater: false,
+    terrainAir: false,
+  },
+  {
+    name: 'ocean',
+    length: 600,
+    terrainground: false,
+    terrainWater: true,
+    terrainAir: false,
+  },
+  {
+    name: 'clouds',
+    length: 600,
+    terrainground: false,
+    terrainWater: false,
+    terrainAir: true,
+  },
 ]
 
 const myCarGroundTerrain = computed(() =>
@@ -257,7 +271,9 @@ const myWheelType = computed(() => {
     <h2>Race courses</h2>
     <select v-model = "myChoiceCourse">
     <option diabled hidden value=''>select race course</option>
-
+    <option v-for="course in courseOptions" :key="course.name" :value="course">
+      {{ course.name }}
+    </option>
     </select>
 </template>
 
