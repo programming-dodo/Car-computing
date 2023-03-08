@@ -173,7 +173,7 @@ const courseOptions: course[] = [
 
 const myCarGroundTerrain = computed(() =>
 {
-  if (myChoiceBody.value.terrainground === true| myChoiceWheels.value.terrainground === true ) {
+  if (myChoiceBody.value.terrainground | myChoiceWheels.value.terrainground  ) {
     return  true
   } else {
     return false
@@ -181,7 +181,7 @@ const myCarGroundTerrain = computed(() =>
 })
 const myCarWaterTerrain = computed(() =>
 {
-  if (myChoiceBody.value.terrainWater === true| myChoiceWheels.value.terrainWater === true ) {
+  if (myChoiceBody.value.terrainWater | myChoiceWheels.value.terrainWater  ) {
     return  true
   } else {
     return false
@@ -189,7 +189,7 @@ const myCarWaterTerrain = computed(() =>
 })
 const myCarAirTerrain = computed(() =>
 {
-  if (myChoiceBody.value.terrainAir === true| myChoiceWheels.value.terrainAir === true ) {
+  if (myChoiceBody.value.terrainAir | myChoiceWheels.value.terrainAir  ) {
     return  true
   } else {
     return false
@@ -211,7 +211,7 @@ const myCarSpeed = computed(() => {
     speedDisplay = totalSpeed;
   }
 
-  console.log(myCarSpeed);
+ 
   return speedDisplay;
 });
 const myWheelsType = computed(() => {
@@ -231,13 +231,13 @@ const myWheelsType = computed(() => {
   } else if (total == 0) {
     weight = 'light';
   }
-  console.log(total);
+  
   return weight;
 });
 
 const myBodySelected =()=> {
   
-  if (myChoiceBody.value.name === "bullet" |myChoiceBody.value.name ===  'dodomobile' |myChoiceBody.value.name ===  'boulder' ) { 
+  if (myChoiceBody === undefined) { 
     return true
   } else {
     return false
@@ -245,8 +245,8 @@ const myBodySelected =()=> {
   
 }
 const myWheelsSelected = ()=> {
-  console.log('stuff',myChoiceBody.value);
-  if (myChoiceWheels.value.name === "wings" | myChoiceWheels.value.name === 'grippers' |  myChoiceWheels.value.name === 'paddle wheels' ) { 
+ 
+  if (myChoiceWheels=== undefined ) { 
     return true
   } else {
     return false
@@ -256,19 +256,17 @@ const myWheelsSelected = ()=> {
 const myEngineSelected = ()=> {
   
   if (
-    myChoiceEngine.value.name === "cheetah" |
-    myChoiceEngine.value.name ===  'lockness' |
-    myChoiceEngine.value.name ===  'dragonFueled') { 
+    myChoiceEngine=== undefined) { 
     return true
   } else {
     return false
   }
-    console.log("engine false")
+    
   
 }
 function myCarComplete () {
    if ( myEngineSelected() === false | myWheelsSelected() === false | myBodySelected() === false  ) {
-     console.log("rimmomg check")
+    
 window.alert('car incomplete')
    }
 }
