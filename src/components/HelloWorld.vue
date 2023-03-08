@@ -4,6 +4,7 @@ import { ref, computed } from 'vue';
 const myChoiceWheels = ref('');
 const myChoiceBody = ref('');
 const myChoiceEngine = ref('');
+const myChoiceCourse = ref ('');
 
 interface carType {
   speed: number;
@@ -43,6 +44,14 @@ interface engineOptions {
   name: string;
   speed: number;
   weight: number;
+  terrainground: boolean;
+  terrainWater: boolean;
+  terrainAir: boolean;
+}
+
+interface courseOptions {
+  name: string;
+  length: number;
   terrainground: boolean;
   terrainWater: boolean;
   terrainAir: boolean;
@@ -137,6 +146,16 @@ const engineOptions: enigne[] = [
       terrainAir: true,
   },
 ];
+
+const courseOptions: course[] = [
+  {
+    name: 'desert',
+    length:'600',
+    terrainground: true 
+    terrainWater: false
+    terrainAir: false
+  }
+]
 
 const myCarGroundTerrain = computed(() =>
 {
@@ -234,6 +253,12 @@ const myWheelType = computed(() => {
       {{ body.name }}
     </option>
   </select>
+  <hr/>
+    <h2>Race courses</h2>
+    <select v-model = "myChoiceCourse">
+    <option diabled hidden value=''>select race course</option>
+
+    </select>
 </template>
 
 <style scoped>
