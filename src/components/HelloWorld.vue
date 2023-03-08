@@ -173,7 +173,7 @@ const courseOptions: course[] = [
 
 const myCarGroundTerrain = computed(() =>
 {
-  if (myChoiceBody.value.terrainground === true| myChoiceWheels.value.terrainground === true |myChoiceEngine.value.terrainground === true) {
+  if (myChoiceBody.value.terrainground === true| myChoiceWheels.value.terrainground === true ) {
     return  true
   } else {
     return false
@@ -181,7 +181,7 @@ const myCarGroundTerrain = computed(() =>
 })
 const myCarWaterTerrain = computed(() =>
 {
-  if (myChoiceBody.value.terrainWater === true| myChoiceWheels.value.terrainWater === true |myChoiceEngine.value.terrainWater === true) {
+  if (myChoiceBody.value.terrainWater === true| myChoiceWheels.value.terrainWater === true ) {
     return  true
   } else {
     return false
@@ -189,7 +189,7 @@ const myCarWaterTerrain = computed(() =>
 })
 const myCarAirTerrain = computed(() =>
 {
-  if (myChoiceBody.value.terrainAir === true| myChoiceWheels.value.terrainAir === true |myChoiceEngine.value.terrainAir === true) {
+  if (myChoiceBody.value.terrainAir === true| myChoiceWheels.value.terrainAir === true ) {
     return  true
   } else {
     return false
