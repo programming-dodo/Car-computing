@@ -120,7 +120,7 @@ const bodyOptions: body[] = [
 
 const engine = [];
 
-const engineOptions: enigne[] = [
+const engineOptions: engine[] = [
   {
     name: 'cheetah',
     speed: 15,
@@ -214,8 +214,7 @@ const myCarSpeed = computed(() => {
   console.log(myCarSpeed);
   return speedDisplay;
 });
-console.log;
-const myWheelType = computed(() => {
+const myWheelsType = computed(() => {
   let weight = 'Car incomplete!';
   let total =
     myChoiceWheels.value.weight +
@@ -235,6 +234,44 @@ const myWheelType = computed(() => {
   console.log(total);
   return weight;
 });
+
+const myBodySelected =()=> {
+  
+  if (myChoiceBody.value.name === "bullet" |myChoiceBody.value.name ===  'dodomobile' |myChoiceBody.value.name ===  'boulder' ) { 
+    return true
+  } else {
+    return false
+  }
+  
+}
+const myWheelsSelected = ()=> {
+  console.log('stuff',myChoiceBody.value);
+  if (myChoiceWheels.value.name === "wings" | myChoiceWheels.value.name === 'grippers' |  myChoiceWheels.value.name === 'paddle wheels' ) { 
+    return true
+  } else {
+    return false
+  }
+  
+}
+const myEngineSelected = ()=> {
+  
+  if (
+    myChoiceEngine.value.name === "cheetah" |
+    myChoiceEngine.value.name ===  'lockness' |
+    myChoiceEngine.value.name ===  'dragonFueled') { 
+    return true
+  } else {
+    return false
+  }
+    console.log("engine false")
+  
+}
+function myCarComplete () {
+   if ( myEngineSelected() === false | myWheelsSelected() === false | myBodySelected() === false  ) {
+     console.log("rimmomg check")
+window.alert('car incomplete')
+   }
+}
 </script>
 
 <template>
@@ -242,7 +279,7 @@ const myWheelType = computed(() => {
     speed:
     {{ myCarSpeed }}
   </p>
-  <p>weight: {{ myWheelType }}</p>
+  <p>weight: {{ myWheelsType }}</p>
   <p>terrain<hr/>ground: {{ myCarGroundTerrain }}
   <hr/>Water:{{ myCarWaterTerrain }}
  <hr/>Air:{{  myCarAirTerrain}}</p>
@@ -275,6 +312,7 @@ const myWheelType = computed(() => {
       {{ course.name }}
     </option>
     </select>
+    <button @click= "myCarComplete()"> race</button>
 </template>
 
 <style scoped>
