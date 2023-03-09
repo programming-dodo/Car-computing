@@ -173,27 +173,37 @@ const courseOptions: course[] = [
 
 const myCarGroundTerrain = computed(() =>
 {
+  let myCarAbleGround = false
   if (myChoiceBody.value.terrainground | myChoiceWheels.value.terrainground  ) {
-    return  true
+    myCarAbleGround =  true
   } else {
-    return false
-  }
+    myCarAbleGround= false
+  } return myCarAbleGround
 })
 const myCarWaterTerrain = computed(() =>
 {
+  let myCarAbleWater = false
   if (myChoiceBody.value.terrainWater | myChoiceWheels.value.terrainWater  ) {
-    return  true
+    myCarAbleWater =  true
   } else {
-    return false
-  }
+    myCarAbleWater = false
+  } return myCarAbleWater
 })
 const myCarAirTerrain = computed(() =>
 {
+  let myCarAbleAir = false
   if (myChoiceBody.value.terrainAir | myChoiceWheels.value.terrainAir  ) {
-    return  true
+    myCarAbleAir =  true
   } else {
-    return false
-  }
+    myCarAbleAir = false
+  } return myCarAbleAir
+})
+
+const myCourseWater = computed(() => {
+window.alert(' car not eligible for this terrain')
+  if (courseOptions.terrainWater && !myCarWaterTerrain) { 
+   window.alert(' car not eligible for this terrain')
+ }
 })
 
 
@@ -235,37 +245,8 @@ const myWheelsType = computed(() => {
   return weight;
 });
 
-const myBodySelected =()=> {
-  
-  if (myChoiceBody === undefined) { 
-    return true
-  } else {
-    return false
-  }
-  
-}
-const myWheelsSelected = ()=> {
- 
-  if (myChoiceWheels=== undefined ) { 
-    return true
-  } else {
-    return false
-  }
-  
-}
-const myEngineSelected = ()=> {
-  
-  if (
-    myChoiceEngine=== undefined) { 
-    return true
-  } else {
-    return false
-  }
-    
-  
-}
 function myCarComplete () {
-   if ( myEngineSelected() === false | myWheelsSelected() === false | myBodySelected() === false  ) {
+   if ( myChoiceEngine.value?.name === undefined | myChoiceWheels.value?.name === undefined | myChoiceBody.value?.name === undefined  ) {
     
 window.alert('car incomplete')
    }
@@ -279,9 +260,8 @@ window.alert('car incomplete')
   </p>
   <p>weight: {{ myWheelsType }}</p>
   <p>terrain<hr/>ground: {{ myCarGroundTerrain }}
-  <hr/>Water:{{ myCarWaterTerrain }}
- <hr/>Air:{{  myCarAirTerrain}}</p>
- 
+  <br>Water:{{ myCarWaterTerrain }}
+ <br>Air:{{  myCarAirTerrain}}</p>
   <select v-model="myChoiceWheels">
     <option disabled hidden value="">select wheel</option>
     <option v-for="Wheels in wheelOptions" :key="Wheels.name" :value="Wheels">
