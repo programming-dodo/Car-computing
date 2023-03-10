@@ -14,6 +14,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
+body{
+  background-image: url("https://lh3.googleusercontent.com/cn4bpok2XS4zUl8niSsAelAxYJdG8LuqJAsSGFDVcL6DKLhYuhJYOcOU10SM40jOPwrh8i-Kfbgl_PZcl0TbIPa0oeIxtEASLqU18NXG"));
+}
+
 a {
   font-weight: 500;
   color: #646cff;
