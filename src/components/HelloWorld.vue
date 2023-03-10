@@ -9,7 +9,7 @@ const myChoiceCourse = ref ('');
 interface carType {
   speed: number;
   weight: number;
-  terrainground: boolean;
+  terrainGround: boolean;
   terrainWater: boolean;
   terrainAir: boolean;
 }
@@ -26,7 +26,7 @@ interface wheelOptions {
   name: string;
   speed: number;
   weight: number;
-  terrainground: boolean;
+  terrainGround: boolean;
   terrainWater: boolean;
   terrainAir: boolean;
 }
@@ -34,7 +34,7 @@ interface bodyOptions {
   name: string;
   speed: number;
   weight: number;
-  terrainground: boolean;
+  terrainGround: boolean;
   terrainWater: boolean;
   terrainAir: boolean;
   
@@ -44,7 +44,7 @@ interface engineOptions {
   name: string;
   speed: number;
   weight: number;
-  terrainground: boolean;
+  terrainGround: boolean;
   terrainWater: boolean;
   terrainAir: boolean;
 }
@@ -52,7 +52,7 @@ interface engineOptions {
 interface courseOptions {
   name: string;
   length: number;
-  terrainground: boolean;
+  terrainGround: boolean;
   terrainWater: boolean;
   terrainAir: boolean;
 }
@@ -66,7 +66,7 @@ const wheelOptions: wheel[] = [
     name: 'wings',
     speed: 12,
     weight: 0,
-    terrainground: false,
+    terrainGround: false,
      terrainWater: false,
       terrainAir: true,
   },
@@ -74,7 +74,7 @@ const wheelOptions: wheel[] = [
     name: 'grippers',
     speed: 9,
     weight: 1,
-    terrainground: true,
+    terrainGround: true,
      terrainWater: false,
       terrainAir: false,
   },
@@ -82,7 +82,7 @@ const wheelOptions: wheel[] = [
     name: 'paddle wheels',
     speed: 4,
     weight: 2,
-    terrainground:false,
+    terrainGround:false,
      terrainWater:true,
       terrainAir: false,
   },
@@ -95,7 +95,7 @@ const bodyOptions: body[] = [
     name: 'bullet',
     speed: 12,
     weight: 0,
-    terrainground:false,
+    terrainGround:false,
      terrainWater:false,
       terrainAir: true,
   },
@@ -103,7 +103,7 @@ const bodyOptions: body[] = [
     name: 'dodomobile',
     speed: 10,
     weight: 1,
-    terrainground:true,
+    terrainGround:true,
      terrainWater:false,
       terrainAir: false,
   },
@@ -111,7 +111,7 @@ const bodyOptions: body[] = [
     name: 'Boulder',
     speed: -40,
     weight: 20,
-    terrainground:true,
+    terrainGround:true,
      terrainWater:false,
       terrainAir: false,
     
@@ -125,7 +125,7 @@ const engineOptions: engine[] = [
     name: 'cheetah',
     speed: 15,
     weight: 0,
-    terrainground:true,
+    terrainGround:true,
      terrainWater:false,
       terrainAir: false,
   },
@@ -133,7 +133,7 @@ const engineOptions: engine[] = [
     name: 'lockness',
     speed: 10,
     weight: 1,
-    terrainground:false,
+    terrainGround:false,
      terrainWater:false,
       terrainAir: true,
   },
@@ -141,7 +141,7 @@ const engineOptions: engine[] = [
     name: 'dragonFueled',
     speed: 12,
     weight: 2,
-    terrainground:true,
+    terrainGround:true,
      terrainWater:false,
       terrainAir: true,
   },
@@ -151,21 +151,21 @@ const courseOptions: course[] = [
   {
     name: 'desert',
     length:600,
-    terrainground: true,
+    terrainGround: true,
     terrainWater: false,
     terrainAir: false,
   },
   {
     name: 'ocean',
     length: 600,
-    terrainground: false,
+    terrainGround: false,
     terrainWater: true,
     terrainAir: false,
   },
   {
     name: 'clouds',
     length: 600,
-    terrainground: false,
+    terrainGround: false,
     terrainWater: false,
     terrainAir: true,
   },
@@ -174,7 +174,7 @@ const courseOptions: course[] = [
 const myCarGroundTerrain = computed(() =>
 {
   let myCarAbleGround = false
-  if (myChoiceBody.value.terrainground | myChoiceWheels.value.terrainground  ) {
+  if (myChoiceBody.value.terrainGround | myChoiceWheels.value.terrainGround  ) {
     myCarAbleGround =  true
   } else {
     myCarAbleGround= false
@@ -203,28 +203,15 @@ const myCourseWater = computed(() => {
 
   if (myChoiceCourse.value.terrainWater === true && myCarWaterTerrain.value === false) {
    return false
- }else{
-   return true
- }
-})
-
-const myCourseAir = computed(() => {
-
-  if (myChoiceCourse.value.terrainAir === true && myCarAirTerrain.value === false) {
+ } else if (myChoiceCourse.value.terrainAir === true && myCarAirTerrain.value === false) {
    return false
- }else{
-   return true
- }
-})
-
-const myCourseGround = computed(() => {
-
-  if (myChoiceCourse.value.terrainGround === true && myCarGroundTerrain.value === false) {
+ } else if (myChoiceCourse.value.terrainGround === true && myCarGroundTerrain.value === false) {
    return false
- }else{
+ } else{
    return true
  }
 })
+
 
 const myCarSpeed = computed(() => {
   let speedDisplay = 'error';
@@ -272,13 +259,9 @@ function myCarComplete ()
      window.alert(' Its a Boulder THEY DONT MOVE')
    } else if (myChoiceCourse.value.name === undefined){
      window.alert ('no course selected')
-   } else if (myCourseGround.value === false ){
-     window.alert('car canot drive on this terrain')
    } else if (myCourseWater.value === false ){
      window.alert('car canot drive on this terrain')
-   } else if (myCourseAir.value === false ){
-     window.alert('car canot drive on this terrain')
-   }  else {
+   } else {
      window.prompt(' You won :D : enter you name so we can add you to the leaderboard')
    } 
 }
@@ -324,9 +307,9 @@ function myCarComplete ()
 
     <button @click= "myCarComplete()"> race</button>
     <hr>
-    {{myCourseGround}}
-    {{myCourseWater}}
-    {{myCourseAir}}
+    Ground:{{myCourseGround}}<br>
+    Water:{{myCourseWater}}<br>
+    Air:{{myCourseAir}}<br>
 </template>
 
 <style scoped>
