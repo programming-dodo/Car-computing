@@ -151,7 +151,7 @@ const courseOptions: course[] = [
   {
     name: 'desert',
     length:600,
-    terrainground: true ,
+    terrainground: true,
     terrainWater: false,
     terrainAir: false,
   },
@@ -274,7 +274,7 @@ function myCarComplete ()
      window.alert ('no course selected')
    } else if (myCourseGround.value === false ){
      window.alert('car canot drive on this terrain')
-   }else if (myCourseWater.value === false ){
+   } else if (myCourseWater.value === false ){
      window.alert('car canot drive on this terrain')
    } else if (myCourseAir.value === false ){
      window.alert('car canot drive on this terrain')
@@ -323,6 +323,10 @@ function myCarComplete ()
     </select>
 
     <button @click= "myCarComplete()"> race</button>
+    <hr>
+    {{myCourseGround}}
+    {{myCourseWater}}
+    {{myCourseAir}}
 </template>
 
 <style scoped>
