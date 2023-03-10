@@ -96,7 +96,7 @@ const bodyOptions: body[] = [
     speed: 12,
     weight: 0,
     terrainground:false,
-     terrainWater:true,
+     terrainWater:false,
       terrainAir: true,
   },
   {
@@ -200,12 +200,31 @@ const myCarAirTerrain = computed(() =>
 })
 
 const myCourseWater = computed(() => {
-window.alert(' car not eligible for this terrain')
-  if (courseOptions.terrainWater && !myCarWaterTerrain) { 
-   window.alert(' car not eligible for this terrain')
+
+  if (myChoiceCourse.value.terrainWater === true && myCarWaterTerrain.value === false) {
+   return false
+ }else{
+   return true
  }
 })
 
+const myCourseAir = computed(() => {
+
+  if (myChoiceCourse.value.terrainAir === true && myCarAirTerrain.value === false) {
+   return false
+ }else{
+   return true
+ }
+})
+
+const myCourseGround = computed(() => {
+
+  if (myChoiceCourse.value.terrainGround === true && myCarGroundTerrain.value === false) {
+   return false
+ }else{
+   return true
+ }
+})
 
 const myCarSpeed = computed(() => {
   let speedDisplay = 'error';
@@ -245,11 +264,23 @@ const myWheelsType = computed(() => {
   return weight;
 });
 
-function myCarComplete () {
+function myCarComplete () 
+{ 
    if ( myChoiceEngine.value?.name === undefined | myChoiceWheels.value?.name === undefined | myChoiceBody.value?.name === undefined  ) {
-    
-window.alert('car incomplete')
-   }
+     window.alert('car incomplete')
+   } else if( myChoiceBody.value.name === "Boulder") {
+     window.alert(' Its a Boulder THEY DONT MOVE')
+   } else if (myChoiceCourse.value.name === undefined){
+     window.alert ('no course selected')
+   } else if (myCourseGround.value === false ){
+     window.alert('car canot drive on this terrain')
+   }else if (myCourseWater.value === false ){
+     window.alert('car canot drive on this terrain')
+   } else if (myCourseAir.value === false ){
+     window.alert('car canot drive on this terrain')
+   }  else {
+     window.prompt(' You won :D : enter you name so we can add you to the leaderboard')
+   } 
 }
 </script>
 
@@ -284,12 +315,13 @@ window.alert('car incomplete')
   </select>
   <hr/>
     <h2>Race courses</h2>
-    <select v-model = "myChoiceCourse">
-    <option diabled hidden value=''>select race course</option>
+    <select  v-model = "myChoiceCourse">
+    <option disabled hidden value=''>select race course</option>
     <option v-for="course in courseOptions" :key="course.name" :value="course">
       {{ course.name }}
     </option>
     </select>
+
     <button @click= "myCarComplete()"> race</button>
 </template>
 
