@@ -114,7 +114,14 @@ const bodyOptions: body[] = [
     terrainGround:true,
      terrainWater:false,
       terrainAir: false,
-    
+  },
+  {
+    name: 'airCraftCarrier',
+    speed: 5,
+    weight: 1,
+    terrainGround:false,
+     terrainWater:true,
+      terrainAir: true,
   },
   {
     name: 'scooter',
@@ -123,7 +130,6 @@ const bodyOptions: body[] = [
     terrainGround:true,
      terrainWater:false,
       terrainAir: false,
-    
   },
   {
     name: 'motorcycle',
@@ -132,7 +138,6 @@ const bodyOptions: body[] = [
     terrainGround:true,
      terrainWater:false,
       terrainAir: false,
-    
   },
   {
     name: 'hoverBoard',
@@ -141,9 +146,40 @@ const bodyOptions: body[] = [
     terrainGround:false,
      terrainWater:false,
       terrainAir: true,
-    
   },
-
+  {
+    name: 'SailBoat',
+    speed: 10,
+    weight: 1,
+    terrainGround:false,
+     terrainWater:true,
+      terrainAir: false,
+  },
+  {
+    name: 'Zeplin',
+    speed: 10,
+    weight: 3,
+    terrainGround:false,
+     terrainWater:false,
+      terrainAir: true,
+  },
+  {
+    name: 'Submarine',
+    speed: 13,
+    weight: 1,
+    terrainGround:false,
+     terrainWater:true,
+      terrainAir: false,
+  },
+  {
+    name: 'schooner',
+    speed: 9,
+    weight: 0,
+    terrainGround:false,
+     terrainWater:true,
+      terrainAir: false,
+  },
+  
 ];
 
 const engine = [];
@@ -283,7 +319,7 @@ function myCarComplete ()
 { 
    if ( myChoiceEngine.value?.name === undefined || myChoiceWheels.value?.name === undefined || myChoiceBody.value?.name === undefined  ) {
      alert('car incomplete')
-   } else if( myChoiceBody.value.name === "Boulder") {
+   } else if(myCarSpeed.value === "Boulder") {
      alert(' Its a Boulder THEY DONT MOVE')
    } else if (myChoiceCourse.value.name === undefined){
      alert ('no course selected')
