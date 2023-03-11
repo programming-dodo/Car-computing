@@ -212,6 +212,70 @@ const engineOptions: engine[] = [
      terrainWater:false,
       terrainAir: true,
   },
+  {
+    name: 'antigravity',
+    speed: 16,
+    weight: -2,
+    terrainGround:true,
+     terrainWater:false,
+      terrainAir: true,
+  },
+  {
+    name: 'cyberpunk',
+    speed: 10,
+    weight: 1,
+    terrainGround:true,
+     terrainWater:false,
+      terrainAir: true,
+  },
+  {
+    name: 'kryptonite',
+    speed: 14,
+    weight: 0,
+    terrainGround:true,
+     terrainWater:false,
+      terrainAir: true,
+  },
+  {
+    name: 'Wormhole',
+    speed: 13,
+    weight: 0,
+    terrainGround:true,
+     terrainWater:false,
+      terrainAir: true,
+  },
+  {
+    name: 'sprint',
+    speed: 10,
+    weight: 1,
+    terrainGround:true,
+     terrainWater:false,
+      terrainAir: true,
+  },
+  {
+    name: 'quadCore',
+    speed: 14,
+    weight: 2,
+    terrainGround:true,
+     terrainWater:false,
+      terrainAir: true,
+  },
+  {
+    name: 'rapidCombustion',
+    speed: 16,
+    weight: 0,
+    terrainGround:true,
+     terrainWater:false,
+      terrainAir: true,
+  },
+  {
+    name: 'accelerator',
+    speed: 9,
+    weight: 1,
+    terrainGround:true,
+     terrainWater:false,
+      terrainAir: true,
+  },
 ];
 
 const courseOptions: course[] = [
@@ -363,7 +427,7 @@ function myCarComplete ()
     <br><br>
   <p>
     Car speed:
-    {{ myCarSpeed }}
+    <span v-if= "myCarSpeed">{{ myCarSpeed }}</span>
   </p>
   <p>Car weight: {{ myWheelsType }}</p>
   <p><hr /><h2>Car Terrain</h2><hr/>ground: {{ myCarGroundTerrain }}
