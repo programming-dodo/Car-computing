@@ -174,7 +174,7 @@ const courseOptions: course[] = [
 const myCarGroundTerrain = computed(() =>
 {
   let myCarAbleGround = false
-  if (myChoiceBody.value.terrainGround | myChoiceWheels.value.terrainGround  ) {
+  if (myChoiceBody.value.terrainGround || myChoiceWheels.value.terrainGround  ) {
     myCarAbleGround =  true
   } else {
     myCarAbleGround= false
@@ -183,7 +183,7 @@ const myCarGroundTerrain = computed(() =>
 const myCarWaterTerrain = computed(() =>
 {
   let myCarAbleWater = false
-  if (myChoiceBody.value.terrainWater | myChoiceWheels.value.terrainWater  ) {
+  if (myChoiceBody.value.terrainWater || myChoiceWheels.value.terrainWater  ) {
     myCarAbleWater =  true
   } else {
     myCarAbleWater = false
@@ -192,7 +192,7 @@ const myCarWaterTerrain = computed(() =>
 const myCarAirTerrain = computed(() =>
 {
   let myCarAbleAir = false
-  if (myChoiceBody.value.terrainAir | myChoiceWheels.value.terrainAir  ) {
+  if (myChoiceBody.value.terrainAir || myChoiceWheels.value.terrainAir  ) {
     myCarAbleAir =  true
   } else {
     myCarAbleAir = false
@@ -253,7 +253,7 @@ const myWheelsType = computed(() => {
 
 function myCarComplete () 
 { 
-   if ( myChoiceEngine.value?.name === undefined | myChoiceWheels.value?.name === undefined | myChoiceBody.value?.name === undefined  ) {
+   if ( myChoiceEngine.value?.name === undefined || myChoiceWheels.value?.name === undefined || myChoiceBody.value?.name === undefined  ) {
      window.alert('car incomplete')
    } else if( myChoiceBody.value.name === "Boulder") {
      window.alert(' Its a Boulder THEY DONT MOVE')
@@ -268,36 +268,46 @@ function myCarComplete ()
 </script>
 
 <template>
-  <p>
-    speed:
-    {{ myCarSpeed }}
-  </p>
-  <p>weight: {{ myWheelsType }}</p>
-  <p>terrain<hr/>ground: {{ myCarGroundTerrain }}
-  <br>Water:{{ myCarWaterTerrain }}
- <br>Air:{{  myCarAirTerrain}}</p>
-  <select v-model="myChoiceWheels">
-    <option disabled hidden value="">select wheel</option>
-    <option v-for="Wheels in wheelOptions" :key="Wheels.name" :value="Wheels">
-      {{ Wheels.name }}
-    </option>
-  </select>
-  <hr />
-  <select v-model="myChoiceEngine">
-    <option disabled hidden value="">select engine</option>
-    <option v-for="engine in engineOptions" :key="engine.name" :value="engine">
-      {{ engine.name }}
-    </option>
-  </select>
-  <hr />
+
+<center>
+<h1> Car Customizer</h1>
+  <br><br>
+ 
   <select v-model="myChoiceBody">
     <option disabled hidden value="">select body</option>
     <option v-for="body in bodyOptions" :key="body.name" :value="body">
       {{ body.name }}
     </option>
   </select>
-  <hr/>
-    <h2>Race courses</h2>
+   |
+   <select v-model="myChoiceEngine">
+    <option disabled hidden value="">select engine</option>
+    <option v-for="engine in engineOptions" :key="engine.name" :value="engine">
+      {{ engine.name }}
+    </option>
+  </select>
+  |
+  <select v-model="myChoiceWheels">
+    <option disabled hidden value="">select wheel</option>
+    <option v-for="Wheels in wheelOptions" :key="Wheels.name" :value="Wheels">
+      {{ Wheels.name }}
+    </option>
+  </select> 
+    <br><br>
+  <p>
+    Car speed:
+    {{ myCarSpeed }}
+  </p>
+  <p>Car weight: {{ myWheelsType }}</p>
+  <p><hr /><h2>Car Terrain</h2><hr/>ground: {{ myCarGroundTerrain }}
+  <br>Water:{{ myCarWaterTerrain }}
+ <br>Air:{{  myCarAirTerrain}}</p>
+  
+  <h2>Race courses</h2>
+  <hr>
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+     
+  <hr>
     <select  v-model = "myChoiceCourse">
     <option disabled hidden value=''>select race course</option>
     <option v-for="course in courseOptions" :key="course.name" :value="course">
@@ -306,10 +316,7 @@ function myCarComplete ()
     </select>
 
     <button @click= "myCarComplete()"> race</button>
-    <hr>
-    Ground:{{myCourseGround}}<br>
-    Water:{{myCourseWater}}<br>
-    Air:{{myCourseAir}}<br>
+    </center>
 </template>
 
 <style scoped>
