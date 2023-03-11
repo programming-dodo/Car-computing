@@ -91,14 +91,7 @@ const wheelOptions: wheel[] = [
 const body = [];
 
 const bodyOptions: body[] = [
-  {
-    name: 'bullet',
-    speed: 12,
-    weight: 0,
-    terrainGround:false,
-     terrainWater:false,
-      terrainAir: true,
-  },
+  
   {
     name: 'dodomobile',
     speed: 10,
@@ -115,14 +108,7 @@ const bodyOptions: body[] = [
      terrainWater:false,
       terrainAir: false,
   },
-  {
-    name: 'airCraftCarrier',
-    speed: 5,
-    weight: 1,
-    terrainGround:false,
-     terrainWater:true,
-      terrainAir: true,
-  },
+  
   {
     name: 'scooter',
     speed: 8,
@@ -139,14 +125,7 @@ const bodyOptions: body[] = [
      terrainWater:false,
       terrainAir: false,
   },
-  {
-    name: 'hoverBoard',
-    speed: 12,
-    weight: 0,
-    terrainGround:false,
-     terrainWater:false,
-      terrainAir: true,
-  },
+  
   {
     name: 'SailBoat',
     speed: 10,
@@ -155,14 +134,7 @@ const bodyOptions: body[] = [
      terrainWater:true,
       terrainAir: false,
   },
-  {
-    name: 'Zeplin',
-    speed: 10,
-    weight: 3,
-    terrainGround:false,
-     terrainWater:false,
-      terrainAir: true,
-  },
+  
   {
     name: 'Submarine',
     speed: 13,
@@ -179,7 +151,38 @@ const bodyOptions: body[] = [
      terrainWater:true,
       terrainAir: false,
   },
-  
+  {
+    name: 'airCraftCarrier',
+    speed: 5,
+    weight: 1,
+    terrainGround:false,
+     terrainWater:true,
+      terrainAir: true,
+  },
+  {
+    name: 'bullet',
+    speed: 12,
+    weight: 0,
+    terrainGround:false,
+     terrainWater:false,
+      terrainAir: true,
+  },
+  {
+    name: 'hoverBoard',
+    speed: 12,
+    weight: 0,
+    terrainGround:false,
+     terrainWater:false,
+      terrainAir: true,
+  },
+  {
+    name: 'Zeplin',
+    speed: 10,
+    weight: 3,
+    terrainGround:false,
+     terrainWater:false,
+      terrainAir: true,
+  },
 ];
 
 const engine = [];
