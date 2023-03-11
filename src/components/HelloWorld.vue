@@ -163,7 +163,7 @@ const courseOptions: course[] = [
     terrainAir: false,
   },
   {
-    name: 'clouds',
+    name: 'cloud9',
     length: 600,
     terrainGround: false,
     terrainWater: false,
@@ -254,15 +254,15 @@ const myWheelsType = computed(() => {
 function myCarComplete () 
 { 
    if ( myChoiceEngine.value?.name === undefined || myChoiceWheels.value?.name === undefined || myChoiceBody.value?.name === undefined  ) {
-     window.alert('car incomplete')
+     alert('car incomplete')
    } else if( myChoiceBody.value.name === "Boulder") {
-     window.alert(' Its a Boulder THEY DONT MOVE')
+     alert(' Its a Boulder THEY DONT MOVE')
    } else if (myChoiceCourse.value.name === undefined){
-     window.alert ('no course selected')
+     alert ('no course selected')
    } else if (myCourseWater.value === false ){
-     window.alert('car canot drive on this terrain')
+     alert('car canot drive on this terrain')
    } else {
-     window.prompt(' You won :D : enter you name so we can add you to the leaderboard')
+     prompt(' You won :D : enter you name so we can add you to the leaderboard')
    } 
 }
 </script>
