@@ -109,13 +109,41 @@ const bodyOptions: body[] = [
   },
   {
     name: 'Boulder',
-    speed: -40,
+    speed: -100,
     weight: 20,
     terrainGround:true,
      terrainWater:false,
       terrainAir: false,
     
   },
+  {
+    name: 'scooter',
+    speed: 8,
+    weight: 1,
+    terrainGround:true,
+     terrainWater:false,
+      terrainAir: false,
+    
+  },
+  {
+    name: 'motorcycle',
+    speed: 15,
+    weight: 2,
+    terrainGround:true,
+     terrainWater:false,
+      terrainAir: false,
+    
+  },
+  {
+    name: 'hoverBoard',
+    speed: 12,
+    weight: 0,
+    terrainGround:false,
+     terrainWater:false,
+      terrainAir: true,
+    
+  },
+
 ];
 
 const engine = [];
