@@ -62,16 +62,9 @@ const carbody = [];
 const wheel = [];
 
 const wheelOptions: wheel[] = [
+  
   {
-    name: 'wings',
-    speed: 12,
-    weight: 0,
-    terrainGround: false,
-     terrainWater: false,
-      terrainAir: true,
-  },
-  {
-    name: 'grippers',
+    name: 'Grippers',
     speed: 9,
     weight: 1,
     terrainGround: true,
@@ -79,11 +72,83 @@ const wheelOptions: wheel[] = [
       terrainAir: false,
   },
   {
-    name: 'paddle wheels',
+    name: 'Springs',
+    speed: 11,
+    weight: 1,
+    terrainGround: true,
+     terrainWater: false,
+      terrainAir: false,
+  },
+  {
+    name: 'Sneakers',
+    speed: 8,
+    weight: 0,
+    terrainGround: true,
+     terrainWater: false,
+      terrainAir: false,
+  },
+  {
+    name: 'Spike Balls',
+    speed: 13,
+    weight: 3,
+    terrainGround: true,
+     terrainWater: false,
+      terrainAir: false,
+  },
+  {
+    name: 'Paddle wheels',
     speed: 4,
+    weight: 1,
+    terrainGround:true,
+     terrainWater:true,
+      terrainAir: false,
+  },
+  {
+    name: 'Propellors',
+    speed: 12,
     weight: 2,
     terrainGround:false,
      terrainWater:true,
+      terrainAir: false,
+  },
+  {
+    name: 'Hydro Boosters',
+    speed: 17,
+    weight: 2,
+    terrainGround:false,
+     terrainWater:true,
+      terrainAir: false,
+  },
+  {
+    name: 'All terrain',
+    speed: 3,
+    weight: 1,
+    terrainGround: true,
+     terrainWater: true,
+      terrainAir: true,
+  },
+  {
+    name: 'Wings',
+    speed: 12,
+    weight: 0,
+    terrainGround: false,
+     terrainWater: false,
+      terrainAir: true,
+  },
+  {
+    name: 'Thrusters',
+    speed: 12,
+    weight: 0,
+    terrainGround: false,
+     terrainWater: false,
+      terrainAir: true,
+  },
+  {
+    name: 'Sneakers',
+    speed: 8,
+    weight: 0,
+    terrainGround: true,
+     terrainWater: false,
       terrainAir: false,
   },
 ];
@@ -93,7 +158,7 @@ const body = [];
 const bodyOptions: body[] = [
   
   {
-    name: 'dodomobile',
+    name: 'Dodomobile',
     speed: 10,
     weight: 1,
     terrainGround:true,
@@ -110,7 +175,7 @@ const bodyOptions: body[] = [
   },
   
   {
-    name: 'scooter',
+    name: 'Scooter',
     speed: 8,
     weight: 1,
     terrainGround:true,
@@ -118,7 +183,7 @@ const bodyOptions: body[] = [
       terrainAir: false,
   },
   {
-    name: 'motorcycle',
+    name: 'Motorcycle',
     speed: 15,
     weight: 2,
     terrainGround:true,
@@ -144,7 +209,7 @@ const bodyOptions: body[] = [
       terrainAir: false,
   },
   {
-    name: 'schooner',
+    name: 'Schooner',
     speed: 9,
     weight: 0,
     terrainGround:false,
@@ -152,7 +217,7 @@ const bodyOptions: body[] = [
       terrainAir: false,
   },
   {
-    name: 'airCraftCarrier',
+    name: 'AirCraftCarrier',
     speed: 5,
     weight: 1,
     terrainGround:false,
@@ -160,7 +225,7 @@ const bodyOptions: body[] = [
       terrainAir: true,
   },
   {
-    name: 'bullet',
+    name: 'Bullet',
     speed: 12,
     weight: 0,
     terrainGround:false,
@@ -168,7 +233,7 @@ const bodyOptions: body[] = [
       terrainAir: true,
   },
   {
-    name: 'hoverBoard',
+    name: 'HoverBoard',
     speed: 12,
     weight: 0,
     terrainGround:false,
@@ -189,7 +254,7 @@ const engine = [];
 
 const engineOptions: engine[] = [
   {
-    name: 'cheetah',
+    name: 'Cheetah',
     speed: 15,
     weight: 0,
     terrainGround:true,
@@ -197,7 +262,7 @@ const engineOptions: engine[] = [
       terrainAir: false,
   },
   {
-    name: 'lockness',
+    name: 'Lockness',
     speed: 10,
     weight: 1,
     terrainGround:false,
@@ -205,7 +270,7 @@ const engineOptions: engine[] = [
       terrainAir: true,
   },
   {
-    name: 'dragonFueled',
+    name: 'DragonFueled',
     speed: 12,
     weight: 2,
     terrainGround:true,
@@ -213,7 +278,7 @@ const engineOptions: engine[] = [
       terrainAir: true,
   },
   {
-    name: 'antigravity',
+    name: 'Antigravity',
     speed: 16,
     weight: -2,
     terrainGround:true,
@@ -221,7 +286,7 @@ const engineOptions: engine[] = [
       terrainAir: true,
   },
   {
-    name: 'cyberpunk',
+    name: 'Cyberpunk',
     speed: 10,
     weight: 1,
     terrainGround:true,
@@ -229,7 +294,7 @@ const engineOptions: engine[] = [
       terrainAir: true,
   },
   {
-    name: 'kryptonite',
+    name: 'Kryptonite',
     speed: 14,
     weight: 0,
     terrainGround:true,
@@ -245,7 +310,7 @@ const engineOptions: engine[] = [
       terrainAir: true,
   },
   {
-    name: 'sprint',
+    name: 'Sprint',
     speed: 10,
     weight: 1,
     terrainGround:true,
@@ -253,7 +318,7 @@ const engineOptions: engine[] = [
       terrainAir: true,
   },
   {
-    name: 'quadCore',
+    name: 'QuadCore',
     speed: 14,
     weight: 2,
     terrainGround:true,
@@ -261,7 +326,7 @@ const engineOptions: engine[] = [
       terrainAir: true,
   },
   {
-    name: 'rapidCombustion',
+    name: 'RapidCombustion',
     speed: 16,
     weight: 0,
     terrainGround:true,
@@ -269,7 +334,7 @@ const engineOptions: engine[] = [
       terrainAir: true,
   },
   {
-    name: 'accelerator',
+    name: 'Accelerator',
     speed: 9,
     weight: 1,
     terrainGround:true,
@@ -280,21 +345,21 @@ const engineOptions: engine[] = [
 
 const courseOptions: course[] = [
   {
-    name: 'desert',
+    name: 'Desert',
     length:600,
     terrainGround: true,
     terrainWater: false,
     terrainAir: false,
   },
   {
-    name: 'ocean',
+    name: 'Ocean',
     length: 600,
     terrainGround: false,
     terrainWater: true,
     terrainAir: false,
   },
   {
-    name: 'cloud9',
+    name: 'Cloud-9',
     length: 600,
     terrainGround: false,
     terrainWater: false,
@@ -386,13 +451,14 @@ function myCarComplete ()
 { 
    if ( myChoiceEngine.value?.name === undefined || myChoiceWheels.value?.name === undefined || myChoiceBody.value?.name === undefined  ) {
      alert('car incomplete')
-   } else if(myCarSpeed.value === "Boulder") {
+   } else if(myChoiceBody.value.name === "Boulder") {
      alert(' Its a Boulder THEY DONT MOVE')
    } else if (myChoiceCourse.value.name === undefined){
      alert ('no course selected')
    } else if (myCourseWater.value === false ){
      alert('car canot drive on this terrain')
-   } else {
+   } else if (myChoiceWheels.value.name === "Spike Balls") {
+     prompt(' You won buy popping the opponents wheels :D : enter you name so we can add you to Pro the leaderboard')}else{
      prompt(' You won :D : enter you name so we can add you to the leaderboard')
    } 
 }
